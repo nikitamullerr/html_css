@@ -1,0 +1,165 @@
+/* header section */
+.header{
+  background:#333;
+  color:white;
+  text-align:center;
+  padding:20px;
+  font-size:28px;
+  width: 100%;
+  position:relative;
+}
+
+
+/* product grid layout */
+.product_grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 30px;
+}
+
+
+/* individual cards */
+.product_card {
+  width: 300px;
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* soft shadow */
+}
+
+
+/* hover effect for cards */
+.product_card:hover{
+  background-color:lightgray;
+}
+
+
+/* product image styling */
+.product_card img {
+  width: 100%;
+  display: block;
+  border-radius: 6px;
+}
+
+
+/* responsive designs for different devices */
+
+/* tablet - 2 cards in each row */
+@media (max-width:768px) {
+  .product_card {
+    width:45%;
+  }
+}
+
+/* mobile - 1 card in a row */
+@media (max-width:480px) {
+  .product_card {
+    width:90%;
+  }
+}
+
+
+/* filter button main */
+.filters{
+  display:flex;
+  justify-content:center;
+  gap:15px; /*spacing between buttons */
+  padding:20px;
+}
+
+
+/* default filter button style */
+.filter-btn{
+  padding:10px 20px;
+  border:none;
+  background:#ddd;
+  cursor:pointer;
+  border-radius:5px;
+  transition:0.3s;
+}
+
+
+/* hover effect for filter buttons */
+.filter-btn:hover{
+  background:#bbb;
+}
+
+
+/* active filter button */
+.filter-btn.active{
+  background:gray;
+  color:white;
+}
+
+
+/*text styles*/
+h3 {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size:x-large;
+}
+
+h4 {
+  font-family: 'Arial Narrow';
+  font-weight:bold;
+  font-style: italic;
+  color: gray;
+}
+
+p {
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: large;
+}
+
+
+/*  image wrapper */
+.img_wrap{
+  position: relative;/* needed for overlay positioning */
+  display: block;
+  width: 100%;
+  aspect-ratio: 3/4; /* keeps image ratio consistent */
+  overflow: hidden;
+}
+
+
+/* image inside wrapper */
+.img_wrap img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+
+/* overlay effect  */
+.overlay{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  padding: 15px;
+  pointer-events: none;
+  opacity: 0;  
+  transition: 0.4s ease;
+
+  z-index: 5;
+}
+
+
+/* show overlay on hover */
+.img_wrap:hover .overlay{
+  opacity: 1;
+}
+
+
+/* zoom image on hover */
+.img_wrap:hover img{
+  transform: scale(1.05);
+}
